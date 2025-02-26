@@ -7,7 +7,7 @@
   --clr-white: 0 0% 100%;
 
   /* font-sizes */
-  --fs-900: 9.375rem;
+  --fs-900: clamp(5rem, 10vw + 1rem, 9.375rem);
   --fs-800: 6.25rem;
   --fs-700: 3.5rem;
   --fs-600: 2rem;
@@ -21,6 +21,27 @@
   --ff-sans-cond: "Barlow Condensed", sans-serif;
   --ff-sans-normal: "Barlow", sans-serif;
 }
+
+/* min 560px */
+@media (min-width: 35em) {
+  :root {
+      --fs-800: 5rem;
+      --fs-700: 2.5rem;
+      --fs-600: 1.5rem;
+      --fs-400: 1rem;
+  }
+}
+
+/* min 720px */
+@media (min-width: 50em) {
+  :root {
+      --fs-800: 6.25rem;
+      --fs-700: 3.5rem;
+      --fs-600: 2rem;
+      --fs-400: 1.125rem;
+  }
+}
+
 
 
 
@@ -104,6 +125,10 @@ select {
   gap: var(--gap, 1rem);
 }
 
+.d-block{
+  display: block;
+}
+
 .container{
   padding-inline: 2em;
   margin-inline: auto;
@@ -114,26 +139,39 @@ select {
 .grid-container{
   outline: 1px solid green;
   display: grid;
-   /* gap: var(--column-gap, 6rem); */
+  place-items: center;
+  text-align: center;
+  padding-inline: 1rem;
 }
 
-@media (min-width: 45rem ){
+.grid-container > *{
+  max-width: 60ch;
+}
+
+
+
+@media (min-width: 50rem ){
   .grid-container{
-    grid-template-columns: minmax(2em, 1fr) repeat(2, minmax(0, 30rem)) minmax(2em, 1fr);
+    grid-template-columns: minmax(2em, 1fr) repeat(2, minmax(0, 40rem)) minmax(2em, 1fr);
     column-gap: var(--container-gap, 2rem);
+    text-align: left;
+  }
+
+  .grid-container--home{
+    padding-bottom: max(6rem, 20vh);
+    align-items: end;
   }
 
   .grid-container > *:first-child{
     grid-column: 2;
-    border: 1px solid red;
+    
   }
   
   .grid-container > *:last-child{
     grid-column: 3;
-    border: 1px solid yellow;
+  
   }
 }
-
 
 
 
@@ -240,7 +278,8 @@ select {
 .large-button{
   position: relative;
   z-index: 1;
-  margin: 5rem;
+  font-size: 2rem;
+  /* margin: 5rem; */
   padding: 0 5rem;
   aspect-ratio: 1; 
   border-radius: 50%;
@@ -436,11 +475,30 @@ freedom with animation */
   border-bottom: .2rem solid hsl(var(--clr-white) / 1);
 } */
 
+
+/* PAGE SPECIFIC */
+
 /* HOMEPAGE */
 .homepage{
   min-height: 100vh;
   display: grid;
-  grid-template-rows: min-content 1fr;
+  grid-template-rows:  1fr;
+  background-image: url(./assets/home/background-home-mobile.jpg);
+  background-size: cover;
+}
+
+@media (min-width: 35em){
+  .homepage{
+    background-image: url(./assets/home/background-home-tablet.jpg);
+    background-size: cover;
+  }
+}
+
+@media (min-width: 50em){
+  .homepage{
+    background-image: url(./assets/home/background-home-desktop.jpg);
+    background-size: cover;
+  }
 }
 
 

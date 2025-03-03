@@ -1,6 +1,14 @@
 import React from 'react'
+import { useState } from 'react'
 
 function Homepage() {
+
+  const [isMenuOpen, setIsMenuOpen] = useState(true)
+
+  function toggleMenuClick(){
+    setIsMenuOpen(!isMenuOpen)
+    console.log(isMenuOpen)
+  }
 
   return (
     <section className='homepage'>
@@ -8,9 +16,17 @@ function Homepage() {
           <div className='homepage-logo'>
             <img src='/shared/logo.svg'></img>
           </div>
-          <button className='mobile-nav-toggle' aria-controls="primary-navigation"><span className='sr-only' aria-expanded="false">Menu</span></button>
-          <nav className='container'>
-              <ul id='primary-navigation' className="primary-nav underline-indicators flex">
+          <button 
+            onClick={toggleMenuClick} 
+            className={`mobile-nav-toggle 
+              ${isMenuOpen ? 'nav-bg-close' : 'nav-bg-open'}`} 
+            aria-controls="primary-navigation">
+          <span className='sr-only' aria-expanded="false">Menu</span>
+          </button>
+          <nav>
+              <ul id='primary-navigation' 
+              className={`primary-nav underline-indicators flex 
+              ${isMenuOpen ? "show" :""}`}>
                   <li className="active"><a href="#" className="uppercase text-white letter-spacing-2"><span>00</span>Home</a></li>
                   <li><a href="#" className="uppercase text-white letter-spacing-2"><span>01</span>Destination</a></li>
                   <li><a href="#" className="uppercase text-white letter-spacing-2"><span>02</span>Crew</a></li>

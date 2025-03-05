@@ -161,6 +161,8 @@ select {
     align-items: end;
   }
 
+ 
+
   .grid-container > *:first-child{
     grid-column: 2;
 
@@ -214,7 +216,6 @@ select {
 .fs-400 { font-size: var(--fs-400); }
 .fs-300 { font-size: var(--fs-300); }
 .fs-200 { font-size: var(--fs-200); }
-
 
 .fs-900,
 .fs-800,
@@ -301,8 +302,9 @@ freedom with animation */
 
 .primary-header{
   align-items: start;
-  justify-content: space-between;  
+  justify-content: space-between;
   width: 100%;
+  
 }
 
 .homepage-logo img{
@@ -310,7 +312,6 @@ freedom with animation */
   max-width: 100%;
   padding: 0;
 }
-
 
 .mobile-nav-toggle {
   display: none;
@@ -324,7 +325,7 @@ freedom with animation */
       margin: 0;
       list-style: none;
       background: hsl( var(--clr-white) / .1);
-      backdrop-filter: blur(1.1rem); 
+      backdrop-filter: blur(1.1rem);
   }
 }
 
@@ -338,7 +339,7 @@ freedom with animation */
   color: hsl(var(--clr-white));
 }
 
-.underline-indicators >*{
+.underline-indicators > *{
   padding: 2em 0;
   position: relative;
   cursor: pointer;
@@ -472,7 +473,6 @@ freedom with animation */
   }
 
   .primary-nav{
-   
     padding-inline: clamp(2rem, 5vw, 5rem);
   }
 
@@ -490,7 +490,6 @@ freedom with animation */
 }
 
 .dot-indicators > *{
-
   padding: .5rem;
   aspect-ratio: 1;
   border-radius: 50%;
@@ -498,10 +497,6 @@ freedom with animation */
   background-color: hsl(var(--clr-white) / .25);
   position: relative;
 }
-
-/* .dot-indicators > [aria-selected="true"]{
-  background-color: hsl(var(--clr-white) / 1)
-} */
 
 .dot-indicators > *::after{
   position: absolute;
@@ -590,27 +585,94 @@ freedom with animation */
 /* PAGE SPECIFIC */
 
 /* HOMEPAGE */
+
+/* Mobile */
 .homepage{
   min-height: 100vh;
   display: grid;
-  grid-template-rows:  1fr 5fr;
+  grid-template-rows: .5fr 5fr;
   background-image: url(./assets/home/background-home-mobile.jpg);
   background-size: cover;
 }
 
-
+/* Tablet */
 @media (min-width: 37.5em){
   .homepage{
+    grid-template-rows: 1fr 5fr;
     background-image: url(./assets/home/background-home-tablet.jpg);
     background-size: cover;
   }
 }
 
+/* Desktop */
 @media (min-width: 50em){
   .homepage{
+    grid-template-rows: 1fr 5fr;
     background-image: url(./assets/home/background-home-desktop.jpg);
     background-size: cover;
   }
 }
 
+/* DESTINATIONS */
 
+/* MOON */
+
+.dest-title{
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.dest-title > h1 {
+  font-family: var(--ff-sans-cond);
+  font-weight: 100;
+}
+
+.dest-title > h1 span{
+  color: hsl(var(--clr-white) / .25);
+}
+
+/* .dest-content > h1 {
+  margin-block: 2rem;
+} */
+
+/* .dest-sub-content{
+  margin-top: 2rem;
+} */
+
+.dest-content > .description{
+  padding-bottom: 4rem;
+  border-bottom: 1px solid hsl(var(--clr-white) / .25);
+}
+
+.dest-sub-content > *{
+  margin-right: 5rem;
+}
+
+
+
+
+@media (min-width: 50em){
+  .dest-title > img{
+    padding-left: 5rem;
+  }
+}
+
+
+.secondary-nav{
+  --gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-family: var(--ff-sans-cond);
+}
+
+.secondary-nav a{
+  text-decoration: none;
+}
+
+.secondary-nav.underline-indicators > *{
+  padding: 1em 0;
+  position: relative;
+  cursor: pointer;
+  border: 0;
+}

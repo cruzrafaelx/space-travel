@@ -11,13 +11,13 @@ function Destinations() {
   const travel = data.destinations[0].travel
 
   return (
-    <section className='grid-container grid-container--destinations destinations'>
+    <section className='grid-container grid-container--destinations destinations flow' style={{"--flow-space": "1.5rem"}}>
         <div className='flex dest-title'>
           <h1 className='uppercase letter-spacing-1'><span>01</span> Pick your destination</h1>
           <img src={image}></img>
         </div>
         
-        <div className='dest-content flow' style={{"--flow-space": "2rem"}}>
+        <div className='dest-content flow' >
           <nav>
               <ul className="secondary-nav underline-indicators flex">
                   <li className="active"><NavLink to='' className="uppercase text-white letter-spacing-2">Moon</NavLink></li>
@@ -31,11 +31,11 @@ function Destinations() {
           <div className='dest-sub-content flex'>
             <div > 
               <p className='uppercase fs-300'>avg. distance</p>
-              <h3 className='fs-600'>{distance}</h3>
+              <h3 className='uppercase fs-600 ff-serif'>{distance}</h3>
             </div>
             <div >
               <p className='uppercase fs-300'>est.travel time</p>
-              <h3 className='fs-600'>{travel}</h3>
+              <h3 className='uppercase fs-600 ff-serif'>{travel}</h3>
             </div>
           </div>
         </div>

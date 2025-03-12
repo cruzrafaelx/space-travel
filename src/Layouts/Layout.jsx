@@ -1,10 +1,12 @@
 import React from 'react'
-import { Outlet, NavLink } from 'react-router-dom'
+import { Outlet, NavLink,useLocation } from 'react-router-dom'
 import { useState } from 'react'
 
 function Layout() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(true)
+    const location = useLocation().pathname
+    
 
     function toggleMenuClick(){
       setIsMenuOpen(!isMenuOpen)
@@ -12,10 +14,10 @@ function Layout() {
     }
 
     //This is where you'll change the background images
-
+    
   
   return (
-    <div className='homepage'>
+    <div className={ `${location === "/" ? "homepage" : "destination" }`}>
         <header className='primary-header flex'>
           <div className='homepage-logo'>
             <img src='/shared/logo.svg'></img>
@@ -39,6 +41,7 @@ function Layout() {
               </ul>
           </nav>
         </header>
+
         <Outlet/>
     </div>
   )

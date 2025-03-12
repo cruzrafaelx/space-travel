@@ -10,11 +10,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
 
-  function Hello(){
-    <h1>Hello test</h1>
-  }
-  console.log("test")
-
   return (
     <BrowserRouter>
       <Routes>

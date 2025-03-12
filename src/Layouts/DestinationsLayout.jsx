@@ -20,10 +20,10 @@ function Destinations() {
         <div className='dest-content flow' >
           <nav>
               <ul className="secondary-nav underline-indicators flex">
-                  <li className="active"><NavLink to='' className="uppercase text-white letter-spacing-2">Moon</NavLink></li>
-                  <li><NavLink to='' className="uppercase text-white letter-spacing-2">Mars</NavLink></li>
-                  <li><NavLink to='' className="uppercase text-white letter-spacing-2">Europa</NavLink></li>
-                  <li><NavLink to='' className="uppercase text-white letter-spacing-2">Titan</NavLink></li>
+                  <li><NavLink to='/destinations/moon' className="uppercase text-white letter-spacing-2">Moon</NavLink></li>
+                  <li><NavLink to='/destinations/mars' className="uppercase text-white letter-spacing-2">Mars</NavLink></li>
+                  <li><NavLink to='/destinations/europa' className="uppercase text-white letter-spacing-2">Europa</NavLink></li>
+                  <li><NavLink to='/destinations/titan' className="uppercase text-white letter-spacing-2">Titan</NavLink></li>
               </ul>
           </nav>
           <h1 className='fs-900 ff-serif uppercase'>{title}</h1>

@@ -362,8 +362,8 @@ freedom with animation */
   transform: scaleX(1);
 }
 
-.underline-indicators > .active::after,
-.underline-indicators > [aria-selected="true"]::after {
+ .active::after,
+ [aria-selected="true"]::after {
   position: absolute;
   content: "";
   left: 0;
@@ -458,7 +458,7 @@ freedom with animation */
 
   .primary-header{
     align-items: center;
-    margin-block-start: 2em;
+    padding-block-start: 2em;
   }
 
   .primary-header::after{
@@ -619,6 +619,7 @@ freedom with animation */
   .destination{
     background-image: url(./assets/destination/background-destination-desktop.jpg);
     background-size: cover;
+    min-height: 100vh;
   }
 }
 
@@ -688,6 +689,13 @@ freedom with animation */
 
 /* Tablet */
 @media (min-width: 37.5em){
+
+  .grid-container--destinations{
+   
+    padding-block-start: 2em;
+  }
+
+
   .dest-title{
     width: 100%;
   }
@@ -704,8 +712,9 @@ freedom with animation */
 
 /* Desktop */
 @media (min-width: 50em){
-  .grid-container.destinations{
+  .grid-container--destinations{
     column-gap: var(--container-gap, 5rem);
+    padding-block-start: 3.2em;
   }
 
   .dest-title{

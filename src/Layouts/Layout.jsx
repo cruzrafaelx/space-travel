@@ -35,7 +35,11 @@ function Layout() {
               ${isMenuOpen ? "show" :""}`}>
                   <li>
                     <NavLink to="." end className="uppercase text-white letter-spacing-2"><span aria-hidden='true'>00</span>Home</NavLink></li>
-                  <li><NavLink to="/destinations" end className="uppercase text-white letter-spacing-2"><span aria-hidden='true'>01</span>Destination</NavLink></li>
+                  <li><NavLink to="/destinations" end 
+                  className={({isActive, isPending}) =>
+                  isActive || window.location.pathname.startsWith("/destinations") ?
+                  "active uppercase text-white letter-spacing-2" :
+                  "uppercase text-white letter-spacing-2"}><span aria-hidden='true'>01</span>Destination</NavLink></li>
                   <li><NavLink to="/crew" className="uppercase text-white letter-spacing-2"><span aria-hidden='true'>02</span>Crew</NavLink></li>
                   <li><NavLink to="technology" className="uppercase text-white letter-spacing-2"><span aria-hidden='true'>03</span>Technology</NavLink></li>
               </ul>

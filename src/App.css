@@ -679,10 +679,10 @@ freedom with animation */
 .dest-sub-content{
   flex-direction: column;
   gap: 2rem;
-  padding-bottom: 2rem;
+  padding-block: 2rem;
 }
 
-.dest-content > .description{
+.description{
   padding-bottom: 2rem;
   border-bottom: 1px solid hsl(var(--clr-white) / .25);
 }

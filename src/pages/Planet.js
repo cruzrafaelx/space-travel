@@ -3,7 +3,8 @@ import { useParams, useOutletContext } from 'react-router-dom'
 
 function Planet() {
 
- const id = useParams().id
+ const params = useParams().id 
+ const id = params ? params : 0
  console.log(id)
 
  const data = useOutletContext()
@@ -18,17 +19,17 @@ function Planet() {
   return (
     <div>
         <h1 className='fs-900 ff-serif uppercase'>{title}</h1>
-          <p className='description'>{description}</p>
-          <div className='dest-sub-content flex'>
-            <div > 
-              <p className='uppercase fs-300'>avg. distance</p>
-              <h3 className='uppercase fs-600 ff-serif'>{distance}</h3>
-            </div>
-            <div >
-              <p className='uppercase fs-300'>est.travel time</p>
-              <h3 className='uppercase fs-600 ff-serif'>{travel}</h3>
-            </div>
+        <p className='description'>{description}</p>
+        <div className='dest-sub-content flex'>
+          <div > 
+            <p className='uppercase fs-300'>avg. distance</p>
+            <h3 className='uppercase fs-600 ff-serif'>{distance}</h3>
           </div>
+          <div >
+            <p className='uppercase fs-300'>est.travel time</p>
+            <h3 className='uppercase fs-600 ff-serif'>{travel}</h3>
+          </div>
+        </div>
     </div>
   )
 }

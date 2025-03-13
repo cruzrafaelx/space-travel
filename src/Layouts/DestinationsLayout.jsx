@@ -19,8 +19,8 @@ function Destinations() {
   return (
     <section className='grid-container grid-container--destinations destinations flow' style={{"--flow-space": "1.5rem"}}>
         <div className='flex dest-title'>
-          <h1 className='uppercase letter-spacing-1'><span>01</span> Pick your destination</h1>
-          <img src={`http://localhost:3000/${image}`}></img>
+          <h1 className='uppercase letter-spacing-1 fs-500'><span aria-hidden='true'>01</span> Pick your destination</h1>
+          <img src={`http://localhost:3000/${image}`} alt={title}></img>
         </div>
         
         <div className='dest-content flow' >

@@ -12,9 +12,7 @@ function Layout() {
       setIsMenuOpen(!isMenuOpen)
       console.log(isMenuOpen)
     }
-
-    //This is where you'll change the background images
-    
+   
   
   return (
     <div className={ `${location === "/" ? "homepage" : "destination" }`}>

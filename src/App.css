@@ -11,7 +11,7 @@
   --fs-800: 6.25rem;
   --fs-700: 3.5rem;
   --fs-600: 2rem;
-  --fs-500: 1.75rem;
+  --fs-500: 1rem;
   --fs-400: 1.125rem;
   --fs-300: 1rem;
   --fs-200: 0.875rem;
@@ -28,6 +28,7 @@
       --fs-800: 5rem;
       --fs-700: 2.5rem;
       --fs-600: 1.5rem;
+      --fs-500: 1.25rem;
       --fs-400: 1rem;
   }
 }
@@ -38,6 +39,7 @@
       --fs-800: 6.25rem;
       --fs-700: 3.5rem;
       --fs-600: 2rem;
+      --fs-500: 1.75rem;
       --fs-400: 1.125rem;
   }
 }
@@ -144,9 +146,10 @@ select {
   padding-inline: 1rem;
 }
 
-.grid-container > *{
-  max-width: 60ch;
+.grid-container  p{
+  max-width: 50ch;
 }
+
 
 
 @media (min-width: 50rem ){
@@ -160,8 +163,6 @@ select {
     padding-bottom: max(6rem, 20vh);
     align-items: end;
   }
-
- 
 
   .grid-container > *:first-child{
     grid-column: 2;
@@ -650,8 +651,6 @@ freedom with animation */
 
 /* DESTINATIONS */
 
-/* MOON */
-
 /* Mobile */
 .dest-title{
   flex-direction: column;
@@ -668,7 +667,7 @@ freedom with animation */
 }
 
 .dest-title > img{
-  max-width: 80%;
+  max-width: 60%;
   margin-inline: auto;
 }
 
@@ -677,35 +676,53 @@ freedom with animation */
 }
 
 .dest-sub-content{
-  flex-direction: column;
-  gap: 2rem;
-  padding-block: 2rem;
+ justify-content: space-evenly;
+ margin-block: 2rem;
 }
+
 
 .description{
   padding-bottom: 2rem;
   border-bottom: 1px solid hsl(var(--clr-white) / .25);
 }
 
+.secondary-nav{
+  --gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-family: var(--ff-sans-cond);
+}
+
+.secondary-nav a{
+  text-decoration: none;
+}
+
+.secondary-nav.underline-indicators > *{
+  padding: 1em 0;
+  position: relative;
+  cursor: pointer;
+  border: 0;
+}
+
 /* Tablet */
 @media (min-width: 37.5em){
 
   .grid-container--destinations{
-   
     padding-block-start: 2em;
   }
-
 
   .dest-title{
     width: 100%;
   }
+
   .dest-title > h1{
     text-align: left;
   }
 
   .dest-sub-content{
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     gap: 2rem;
   }
 }
@@ -738,27 +755,12 @@ freedom with animation */
 
   .dest-sub-content{
     justify-content: start;
-    gap: 5rem;
+    gap: min(2vw, 6rem);
+  }
+
+  .secondary-nav{
+    justify-content: start;
   }
 
 }
 
-
-.secondary-nav{
-  --gap: 1rem;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  font-family: var(--ff-sans-cond);
-}
-
-.secondary-nav a{
-  text-decoration: none;
-}
-
-.secondary-nav.underline-indicators > *{
-  padding: 1em 0;
-  position: relative;
-  cursor: pointer;
-  border: 0;
-}

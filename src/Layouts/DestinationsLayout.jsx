@@ -2,7 +2,7 @@ import React from 'react'
 import data from '../data.json'
 import { NavLink, Outlet, useParams } from 'react-router-dom'
 
-function Destinations() {
+function DestinationsLayout() {
 
   const id = useParams().id
 
@@ -15,7 +15,7 @@ function Destinations() {
   const distance = data.destinations[0].distance
   const travel = data.destinations[0].travel
   
-
+  console.log(image)
   return (
     <section className='grid-container grid-container--destinations destinations flow' style={{"--flow-space": "1.5rem"}}>
         <div className='flex dest-title'>
@@ -59,4 +59,4 @@ function Destinations() {
   )
 }
 
-export default Destinations
+export default DestinationsLayout

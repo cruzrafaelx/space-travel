@@ -75,7 +75,7 @@ h4,
 h5,
 h6,
 p {
-    font-weight: 400;
+    font-weight: 300;
 }
 /* setup body */
 body{
@@ -144,9 +144,10 @@ select {
   place-items: center;
   text-align: center;
   padding-inline: 1rem;
+  padding-block-end: 2rem;
 }
 
-.grid-container  p{
+.grid-container p{
   max-width: 50ch;
 }
 
@@ -488,6 +489,7 @@ freedom with animation */
   --gap: 2rem;
   place-content: center;
   cursor: pointer;
+  
 }
 
 .dot-indicators > *{
@@ -497,6 +499,7 @@ freedom with animation */
   border: 0;
   background-color: hsl(var(--clr-white) / .25);
   position: relative;
+  cursor: pointer;
 }
 
 .dot-indicators > *::after{
@@ -659,7 +662,7 @@ freedom with animation */
 
 .dest-title > h1 {
   font-family: var(--ff-sans-cond);
-  font-weight: 100;
+  font-weight: 300;
 }
 
 .dest-title > h1 span{
@@ -679,7 +682,6 @@ freedom with animation */
  justify-content: space-evenly;
  margin-block: 2rem;
 }
-
 
 .description{
   padding-bottom: 2rem;
@@ -764,3 +766,45 @@ freedom with animation */
 
 }
 
+/* CREW */
+
+/* Mobile */
+
+.crew-title span{
+  color: hsl( var(--clr-light) / .5);
+}
+
+.crew-description{
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+
+
+.crew-description h3{
+  color: hsl( var(--clr-light) / .5);
+  margin-block-end: -0.7em;
+}
+
+.crew-img{
+  border-bottom: 1px solid hsl( var(--clr-light) / .25);
+}
+
+.crew-img > img{
+  position: relative;
+  max-width: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+.crew > img::after{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: hsl( var(--clr-light) / .25);
+  transform: scale(1);
+  z-index: 1;
+}

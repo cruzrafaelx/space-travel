@@ -776,11 +776,11 @@ freedom with animation */
 
 .crew-description{
   flex-direction: column;
-  gap: 1.2em;
+  gap: 1.3em;
 }
 
 
-
+s
 .crew-description h3{
   color: hsl( var(--clr-light) / .5);
   margin-block-end: -0.7em;
@@ -808,3 +808,5 @@ freedom with animation */
   transform: scale(1);
   z-index: 1;
 }
+
+/* Try commit on Mac */

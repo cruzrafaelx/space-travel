@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 function DesignSystem() {
   return (
@@ -111,9 +112,9 @@ function DesignSystem() {
                 </div>
 
                 <div className="dot-indicators flex">
-                    <button aria-selected="true"><span className="sr-only">slide title</span></button>
-                    <button aria-selected="false"><span className="sr-only">slide title</span></button>
-                    <button aria-selected="false"><span className="sr-only">slide title</span></button>
+                    <NavLink aria-selected="true"><span className="sr-only">slide title</span></NavLink>
+                    <NavLink aria-selected="false"><span className="sr-only">slide title</span></NavLink>
+                    <NavLink aria-selected="false"><span className="sr-only">slide title</span></NavLink>
                 </div>
 
                 <div className="number-indicators flex">

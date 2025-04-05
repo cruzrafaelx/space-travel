@@ -2,9 +2,10 @@ import React from 'react'
 import data from '../data.json'
 import { NavLink, Outlet, useParams } from 'react-router-dom'
 
-function DestinationsLayout() {
+function PlanetsLayout() {
 
   const id = useParams().id
+  console.log(id)
 
   const image = id ? 
                 data.destinations[id].images.png : 
@@ -15,9 +16,9 @@ function DestinationsLayout() {
   const distance = data.destinations[0].distance
   const travel = data.destinations[0].travel
   
-  console.log(image)
+  
   return (
-    <section className='grid-container grid-container--destinations destinations flow' style={{"--flow-space": "1.5rem"}}>
+    <section className='grid-container grid-container--destinations flow' style={{"--flow-space": "1.5rem"}}>
         <div className='flex dest-title'>
           <h1 className='uppercase letter-spacing-1 fs-500'><span aria-hidden='true'>01</span> Pick your destination</h1>
           <img src={`http://localhost:3000/${image}`} alt={title}></img>
@@ -59,4 +60,4 @@ function DestinationsLayout() {
   )
 }
 
-export default DestinationsLayout
+export default PlanetsLayout

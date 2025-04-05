@@ -6,7 +6,7 @@ function Layout() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(true)
     const location = useLocation().pathname
-    
+    console.log(location)
 
     function toggleMenuClick(){
       setIsMenuOpen(!isMenuOpen)
@@ -15,7 +15,10 @@ function Layout() {
    
   
   return (
-    <div className={ `${location === "/" ? "homepage" : "destination" }`}>
+    <div className={ `${location === "/" ? "homepage" : 
+                        location === "/destinations" ? "destination" :
+                        location === "/crew" ? "crew" :
+                        location === "/technology" ? "technology" : ""}`}>
         <header className='primary-header flex'>
 
           <div className='homepage-logo'>

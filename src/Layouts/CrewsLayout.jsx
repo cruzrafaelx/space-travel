@@ -17,8 +17,8 @@ function CrewsLayout() {
   const bio = data.crew[0].bio
 
   return (
-    <section className='grid-container crew flow' style={{"--flow-space": "2rem"}}>
-      <h1 className='uppercase crew-title letter-spacing-2 fs-400 ff-sans-cond'><span>02</span> Meet your crew</h1>
+    <section className='grid-container grid-container--crew flow' style={{"--flow-space": "2rem"}}>
+      <h1 className='crew-title uppercase letter-spacing-2 fs-400 ff-sans-cond'><span>02</span> Meet your crew</h1>
       <div className='crew-img'>
         <img src={`http://localhost:3000/${image}`}></img>
       </div>

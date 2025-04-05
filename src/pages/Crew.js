@@ -15,7 +15,7 @@ function Crew() {
 
   return (
       <div className='crew-description flex'>
-        <h3 className='uppercase ff-serif'>{role}</h3>
+        <h3 className='uppercase ff-serif fs-500'>{role}</h3>
         <h1 className='uppercase ff-serif fs-600'>{name}</h1>
         <p>{bio}</p>
       </div>

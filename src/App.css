@@ -144,7 +144,6 @@ select {
   place-items: center;
   text-align: center;
   padding-inline: 1rem;
-  
 }
 
 .grid-container p{
@@ -155,22 +154,25 @@ select {
 
 @media (min-width: 50rem ){
   .grid-container{
+    display: grid;
     grid-template-columns: minmax(2em, 1fr) repeat(2, minmax(0, 40rem)) minmax(2em, 1fr);
     column-gap: var(--container-gap, 2rem);
     text-align: left;
   }
+
+ 
 
   .grid-container--home{
     padding-bottom: max(6rem, 20vh);
     align-items: end;
   }
 
-  .grid-container > *:first-child{
+  .grid-container--home > *:first-child{
     grid-column: 2;
 
   }
 
-  .grid-container > *:last-child{
+  .grid-container--home > *:last-child{
     grid-column: 3;
 
   }
@@ -770,6 +772,16 @@ freedom with animation */
     padding-block-start: 3.2em;
   }
 
+  .grid-container--destinations > *:first-child{
+    grid-column: 2;
+
+  }
+
+  .grid-container--destinations > *:last-child{
+    grid-column: 3;
+
+  }
+
   .dest-title{
     width: 80%;
   }
@@ -837,15 +849,25 @@ freedom with animation */
       "titl"
       "desc"
       "indi"
-      "imge"
-    ;
-    grid-template-columns: 1fr;
-  
+      "imge";
   }
 
   .crew-title{
     grid-area: titl;
-  
+  }
+
+  .dot-indicators{
+    grid-area: indi;
+  }
+
+  .crew-description{
+    grid-area: desc;
+  }
+
+  .crew-img{
+    grid-area: imge;
+    border: none;
+    margin-block-end: -1em;
   }
 
   .grid-container--crew .crew-title{
@@ -853,21 +875,47 @@ freedom with animation */
     justify-self: start;
   }
 
-  .crew-indicators{
-    grid-area: indi;
-  }
-  .crew-description{
-    grid-area: desc;
-  }
-  .crew-img{
-    grid-area: imge;
-    border: none;
-    margin-block-end: -1em;
-  }
-
   .crew-img > img{
     max-width: 80%;
   }
-  
+}
 
+@media (min-width: 50em){
+  .grid-container--crew {
+    display: grid;
+    grid-template-columns: minmax(2em, 1fr) repeat(2, minmax(0, 40rem)) minmax(2em, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+      ". titl imge ."
+      ". desc imge ."
+      ". indi imge .";
+    padding-block-start: 2em;
+  }
+  
+  .crew-title{
+    grid-area: titl;
+  }
+
+  .crew-description{
+    grid-area: desc;
+  }
+
+  .crew-img{
+    grid-area: imge;
+  }
+
+  .dot-indicators{
+    grid-area: indi;
+  }
+
+  .crew-title,
+  .crew-description,
+  .dot-indicators{
+    justify-self: start;
+  }
+
+  .crew-img > img{
+    max-width: 100%;
+    height: auto;
+  }
 }

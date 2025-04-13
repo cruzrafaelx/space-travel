@@ -16,9 +16,9 @@ function Layout() {
   
   return (
     <div className={ `${location === "/" ? "homepage" : 
-                        location === "/destinations" ? "destination" :
-                        location === "/crew" ? "crew" :
-                        location === "/technology" ? "technology" : ""}`}>
+                        location.startsWith("/destinations") ? "destination" :
+                        location.startsWith("/crew") ? "crew" :
+                        location.startsWith("/technology") ? "technology" : ""}`}>
         <header className='primary-header flex'>
 
           <div className='homepage-logo'>

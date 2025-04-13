@@ -4,13 +4,12 @@ import { useParams, useOutletContext } from 'react-router-dom'
 function Planet() {
 
  const params = useParams().id 
- const id = params ? params : 0
+ const id = params || 0
  console.log(id)
 
  const data = useOutletContext()
  console.log(data)
 
-//  const image = data.destinations[0].images.png
  const title =  data.destinations[id].name
  const description = data.destinations[id].description
  const distance = data.destinations[id].distance

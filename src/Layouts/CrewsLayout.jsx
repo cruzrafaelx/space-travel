@@ -2,7 +2,6 @@ import React from 'react'
 import { Outlet, NavLink, useParams } from 'react-router-dom'
 import data from '../data.json'
 
-
 function CrewsLayout() {
 
   const id = useParams().id 
